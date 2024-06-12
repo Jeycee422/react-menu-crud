@@ -42,13 +42,15 @@ function App() {
     const unsubscribe = onValue(dbRef, (snapshot) => {
       if (snapshot.exists()) {
         const fetchedData = snapshot.val();
+        console.log(fetchedData)
         const dataArray = Object.keys(fetchedData).map(key => ({
           id: key,
           ...fetchedData[key]
         }));
         setMenuList(dataArray);
       } else {
-        toast.error("No data available")
+        setMenuList([])
+        // toast.error("No data available")
       }
     }, (error) => {
       toast.error("Error fetchind data.")
