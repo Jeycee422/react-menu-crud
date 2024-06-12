@@ -1,38 +1,190 @@
+:root {
+  --primary-color: #00A5B0;
+  --light-gray-color: #f5f5f5;
+  --text-color: #212529;
+  --background-color: white;
+  --gray-400: #9ca3af;
+  --light-black: rgba(0,0,0,0.1);
+  --gray-600: #4b5563;
+}
 .App {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 1rem;
+  
+}
+
+.menu-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-container {
+  padding: 0 1rem;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.search-box:focus-within {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.search-icon {
+  cursor: pointer;
+}
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.search-bar {
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+}
+.search-bar:focus {
+  color: var(--primary-color);
+}
+.search-box {
+  margin-right: 1rem;
+  padding: 0 15px;
+  display:flex;
+  align-items: center;
+  border-radius: 6px;
+  width: 100%;
+  background: var(--light-gray-color);
+  height: 40px;
+  border: 2px solid var(--light-gray-color);
+}
+.icon-filter {
+  background: var(--light-gray-color);
+  border-radius: 6px;
+  padding: 14px 15px;
+}
+.icon-filter:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.create-box {
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.button-create {
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  color: var(--background-color);
+  cursor: pointer;
   text-align: center;
+  
+}
+.plus-icon {
+  color: var(--background-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menu-table-container {
+  padding: 0 1rem;
+  margin: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table-header {
+  border-bottom: 2px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  color: var(--gray-400);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: .8rem 1.5rem;
+  font-weight: 600;
+}
+.table-header div:nth-child(6), .table-header div:nth-child(5), .table-header div:nth-child(4){
+  width: 10%;
+}
+.table-header div:nth-child(1), .table-header div:nth-child(2), .table-header div:nth-child(3){
+  width: 22%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: fit-content;
+  margin: 8rem auto;
+}
+.empty-state div:nth-child(2) {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-bottom: 6px;
+  margin-top: 8px;
+}
+.empty-state div:nth-child(3) {
+  font-size: 16px;
+  text-align: center;
+  color: var(--gray-400);
+}
+.ghost-icon {
+  color: var(--primary-color);
+  font-size: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.table-content .item-component:nth-child(1) {
+  background: var(--primary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.no-result-img {
+  width: 10rem;
+}
+
+@media (min-width: 1360px) {
+  .menu-container {
+      max-width: 1320px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 800px) {
+  .menu-table-container {
+    padding: 0;
+    margin: 0;
+  }
+  .search-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .item-container div:nth-child(3) {
+    flex-direction: column;
+  }
+  .item-container {
+    padding: 2rem 1.5rem;
+  }
+  .item-container div:nth-child(6) {
+    visibility: hidden;
+  }
+  .table-header div:nth-child(6) {
+    visibility: hidden;
+  }
+  .edit-delete {
+    flex-direction: column;
+    margin-right: .2rem;
+  }
+  .icon-trash {
+    margin-right: .5rem;
+    margin-top: .2rem;
   }
 }

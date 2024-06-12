@@ -1,0 +1,62 @@
+:root {
+    --primary-color: #00a5b0;
+    --light-primary: rgba(0, 165, 176, 0.08);
+    --light-gray-color: #f5f5f5;
+    --text-color: #212529;
+    --background-color: white;
+    --gray-400: #9ca3af;
+    --light-black: rgba(0,0,0,0.1);
+    --gray-600: #4b5563;
+    --green-500: #22c55e;
+    --red-500: #ef4444;
+  }
+
+  .item-container {
+    display: flex;
+    align-items: center;
+    color: var(--gray-600);
+    padding: 1.5rem 1.5rem;
+    position: relative;
+  }
+
+  .even {
+    background: var(--light-primary);
+  }
+
+  .item-container div:nth-child(1),.item-container div:nth-child(2),.item-container div:nth-child(3) {
+    width: 22%;
+  }
+  .item-container div:nth-child(4),.item-container div:nth-child(5),.item-container div:nth-child(6) {
+    width: 10%;
+  }
+
+  .item-container div:nth-child(3) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .icon-pen {
+    background: var(--green-500);
+    border-radius: 6px;
+    padding: .6rem;
+    cursor: pointer;
+    color: var(--background-color);
+    margin-right: .5rem;
+  }
+
+  .icon-trash {
+    background: var(--red-500);
+    border-radius: 6px;
+    padding: .6rem;
+    cursor: pointer;
+    color: var(--background-color);
+  }
+
+  .edit-delete {
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-right: 1.5rem;
+    font-size: 12px;
+  }
